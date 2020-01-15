@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 
 const useLocalStorage = (key, initialValue) => {
@@ -7,5 +7,8 @@ const useLocalStorage = (key, initialValue) => {
         return item ? JSON.parse(item) : initialValue;
     });
 
+    const setValue = (value) => {
+        setStoredValue(value);
+    }
     return [storedValue];
 }
